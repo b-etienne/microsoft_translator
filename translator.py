@@ -2,7 +2,7 @@
 """
 Created on Wed Sep 14 11:53:08 2016
 
-@author: BE34B2EN
+@author: betienne
 """
 
 import requests
