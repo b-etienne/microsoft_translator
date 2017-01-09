@@ -18,12 +18,12 @@ class Translator(object):
         Change client_id and client_secret api key if needed
         Register at datamarket.azure.com
         """
-        self._client_secret = "94FqwtC5Q51jdwqnysxquhaX/VxYl7tGjmQTS7i5Vy4="
-        self._client_id = "BE34B2EN"
+        self._client_secret = "XXX"
+        self._client_id = "ZZZ"
         self._url_request = "http://api.microsofttranslator.com"
         self._grant_type = "client_credentials"
-        self._proxies = {'https' : 'https://10.34.18.10:3128',
-                       'http' : 'http://10.34.18.10:3128'}
+ #       self._proxies = {'https' : 'https://00.00.00.00:0000',
+ #                      'http' : 'http://00.00.00.00:0000'}
         print("-"*50)
         print("{:>30s}".format("WARNING !"))
         print("-"*50)
@@ -33,13 +33,13 @@ class Translator(object):
 
     def change_proxies(self):
         """
-        Sometimes you need to change proxies within Enedis
+        Sometimes you need to change proxies 
         """
-        if self._proxies['http'] == 'http://10.34.18.10:3128':
-            self._proxies['http'] = 'http://10.121.108.7:3128'
+        if self._proxies['http'] == 'http://00.00.00.00:0000':
+            self._proxies['http'] = 'http://00.00.00.00:0000'
 
-        if self._proxies['https'] == 'https://10.34.18.10:3128':
-            self._proxies['https'] = 'https://10.121.108.7:3128'
+        if self._proxies['https'] == 'https://00.00.00.00:0000':
+            self._proxies['https'] = 'https://00.00.00.00:0000'
 
     def _get_token(self):
         """
@@ -109,16 +109,3 @@ if __name__=='__main__':
     t = Translator()
     t.test()
 
-#    lines = [x for x in open('sacre_coeur_chinois.txt','r',encoding='utf-8' )]
-#
-#    f = open('sacre_coeur_chinois_traduit.txt','a',encoding='utf-8')
-#    print()
-#    for i, line in enumerate(lines):
-#        time.sleep(1)
-#        print("Translated {:.0f} comments".format(i+1))
-#        try:
-#            *s, l = line.split("|")
-#            f.write('|'.join(s)+"|"+t.translate(l.strip(),'zh-CN','fr')+'\n')
-#        except:
-#            pass
-#    f.close()
